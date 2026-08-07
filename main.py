@@ -11,23 +11,17 @@ dicc = {
 }
 
 dicc_cuenta = {
-    1234: {"Cuenta": 123, "Nombre": "Jose Gabriel Ortega Mejia", "Balance": 10000},
+    1234: {"Cuenta": 123, "Nombre": "Jose Gabriel Ortega Mejia", "Balance": 10000, "Cuenta_tercero": 123456},
     
     7894: {
         "Cuenta": 456,
         "Nombre": "Cristina Gabriela Mejia Morillo",
         "Balance": 20000,
+        "Cuenta_tercero": 123456,
     }
 }
 
 historial = []
-
-
-cuenta_tercero = 123456
-# cuenta_personal = 123
-# balance_personal = 10000
-# primer_pin = 1234
-
 
 log_in = int(input("ingrese su pin: "))
 time.sleep(2)
@@ -98,7 +92,7 @@ while True:
                     "| Introduzca la cuenta de la persona a la que le desea transferir: "
                 )
             )
-            if cuenta1 == cuenta_tercero:
+            if cuenta1 == dicc_cuenta[log_in]["Cuenta_tercero"]:
                 print("Exelente, ya usted puede transferir")
                 time.sleep(2)
                 deposito = int(
